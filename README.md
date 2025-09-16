@@ -144,13 +144,4 @@ For production use:
 - **Containerization**: Docker & Docker Compose
 - **Development**: Hot-reload with volume mounting
 
-## Assignment Requirements ✅
-- [x] Django project with API endpoints
-- [x] Dockerfile with Python base image
-- [x] Docker Compose with app + database
-- [x] Database migrations on startup
-- [x] Accessible at `http://localhost:8000/items/`
-- [x] **Bonus**: wait-for script for DB timing
-- [x] **Bonus**: Auto-created Django admin user
-- [x] **Bonus**: Swagger API documentation  
-- [x] **Bonus**: Development hot-reload volumes
+
