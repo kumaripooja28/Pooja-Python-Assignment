@@ -1,0 +1,31 @@
+services:
+  web:
+    build: .
+    container_name: railsathi_web
+    command: bash /entrypoint.sh
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+      - static_volume:/app/djangoapp/static
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: railsathi_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+  static_volume:
